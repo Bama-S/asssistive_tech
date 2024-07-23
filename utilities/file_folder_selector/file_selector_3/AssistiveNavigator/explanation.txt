@@ -1,0 +1,68 @@
+mouseadaptor class: to receive mouse events
+timertask: to schedule tasks
+
+global1:
+    initialise variables
+toolkit:
+    to get screen dimensions
+
+------------------------------------------
+timer3: for that buttons - if commented: no way to exit program, even button clicks wouldnt work
+timer2: for redline (vertical scanning stroke): it wouldnt be dispalyed thereby its funtion of selecting cant be achieved
+timer1: for blueline (horizontal scanning stroke): all funtions wrto horizontal scanning isnt working
+timer: for the frames: entire system doesnt work
+
+seqence:
+timer->timer1->timer2->timer3
+
+------------------------------------------
+attributes inside global1 class:
+    int isscan=0; //boolean
+	int cnt=0;
+	int stopmain=0; //boolean
+	int scanquad=0;
+	int x1=0,y1=0,x2=0,y2=0,ny2=0;
+	int cndx=0,cndy=0;
+	int width=0,height=0;
+	int xscan=0,yscan=0;
+	int fscan=0;
+	int mscan=0;
+	int ibt=0;
+	int ismscan=0;
+	int mfscan=0;
+	int candd=0;
+
+mouse class:
+    global object (global1), image(background), graphis(g1)
+
+
+timer: quadrant scanning 
+	takes 2 input, mouse and global1 object.
+	this timer object is passed to myTimer (java.util.Timer), which takes 3 inputs (timer, delay and period)
+
+
+paintComponent(): automatically called whenever the screen becomes visible
+
+isscan -  variable which indicates that quadrant scanning is in progress and selection is yet to be done
+obg.cnt - variable to check the number of quadrants moved. after 2 full quadrant traversals, the quadrant scanner stops. 
+	      this is checked using obg.cnt==9
+
+ibt - button counter ranges from 1 to n buttons
+
+Robot  - This class is used to generate native system input events for the purposes of 
+		 automatic mouse clicking
+
+Aksharam
+*********
+
+custom.java 
+  Has variables used to make the customization of the scanning of the buttons (to change color, font, etc)
+  Has toggleFrame function used for calling the keyborad
+
+observation - keyboard scanning is happening only once we press from the the symbol ` onwards. 
+			  (before that scanning does not take place)
+
+			  There is custom option in keyboard where we can modify the font size, color, layout, and speed of the scan.
+
+			  If we click shift, numbers will change to special characters in the keyboard.
+			  There are 2 layouts in keyboard - ABC and QWERTY

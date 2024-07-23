@@ -1,0 +1,15 @@
+The steps for executing the Keyboard
+--------------------------------------------------------------
+
+1) install java JDK 1.6
+
+2) Open your project location in the command prompt.
+
+3) set classpath=%classpath%;jw-0817-javatalk.jar;
+
+4) javac *.java
+
+5) java application
+
+Note:All Applications should be installed in the system eg:MS Word,Google Chrome etc..,
+
