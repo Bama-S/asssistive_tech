@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %} 
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="EducatTutotrial"
+  agent-id="22fb3c20-0c13-40a4-ad8d-e5a7efb2386e"
+  language-code="en">
+</df-messenger>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Hello!</h1>
+        <p class="lead">Choose user profiles to continue with<b> Educat</b></p>
+    </div>
+</div>
+<div class="body">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Did you know?</h2>
+                    <div  class="langinpage-text">
+                        <p>Most of the Autistic students show surprising variations in their abilities with perpectual and cognitive skills. Using <b>Educat</b> you can provide these students with sufficient materials to enhance their learning.</p>
+                    </div>
+            </div>
+            <div class="col">
+                
+                <h1>Enter as a </h1>
+                <form method="post" action="/">
+                    <input type="submit" class="btn btn-primary" value="TEACHER" name="TEACHER" />
+                    <input type="submit" class="btn btn-primary" value="STUDENT" name="STUDENT" />
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+    {% endblock %}

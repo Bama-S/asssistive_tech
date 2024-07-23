@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Select a lesson to view</h1>
+        <!-- <p class="lead"><b>Warning! </b>This action can't be undone.</p> -->
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Educat</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <a  href="/student_dashboard" class="nav-link">Student Dashboard</a>
+        </li>
+        <li class="nav-iterm active">
+            <a  href="/logout" class="nav-link"value="LOGOUT" name="LOGOUT">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="body" style="color: #ffffff; font-size: 30px">
+    <div class="wrapper">
+        <div class="form-box login">
+            <!-- <h2 style="color: #ffffff">LogIn</h2>
+                <div class="form-group">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email"  class="form-control" name="email" placeholder="Email">
+                
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        
+                        <input type="password" class="form-control" name="password" placeholder="Password">
+                    </div>
+                </div>             -->
+
+                <p>Student: {{student_email}}</p>
+                <p>Lesson: {{lesson_name}}</p>
+                <p>Current score: {{score}}</p>
+                <p>Best score: {{best_score}}</p>
+        
+        </div>
+    </div>
+</div>
+
+  <!-- <div style="background-color: #faf2ae;min-height: 100vh;font-size: larger;align-items: center;justify-content: center;"> -->
+  <!-- <body> -->
+    <!-- <centre> -->
+    <!-- <p>Student: {{student_email}}</p>
+    <p>Lesson: {{lesson_name}}</p>
+    <p>Current score: {{score}}</p>
+    <p>Best score: {{best_score}}</p> -->
+  <!-- </centre> -->
+  <!-- </body> -->
+<!-- </div> -->
+  {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<script src="{{url_for('static', filename='navigation.js')}}"></script>
+
+<df-messenger
+  intent="WELCOME"
+  chat-title="EducatTutotrial"
+  agent-id="22fb3c20-0c13-40a4-ad8d-e5a7efb2386e"
+  language-code="en">
+</df-messenger>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Educat</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('student_dashboard') }}">Student Dashboard</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+<div class="body">
+    <div class="col" style="margin: 30px; padding: 30px">
+      <div class="row">
+          <center><h1 style = "color: #ffffff; font-size: 60px;">{{page_title}}</h1></center>
+      </div>
+      <div class="row" >
+            <div class="row">
+              <p style = "color: #ffffff; text-align: center; font-size: 30px;">{{page_content}}</p>
+            </div>
+      </div>
+      <div class="row">
+          <form style="text-align:center;" method="post" action="{{url_for('display_page')}}">
+              <input class="btn-login" style="margin: 20px; font-size: 30px" type="submit" value="PREVIOUS" name="PREVIOUS"/>
+              <input class="btn-login" style="margin: 20px; font-size: 30px" type="submit" value="NEXT" name="NEXT"/>
+          </form>
+      </div>
+       
+</div>
+</div>
+
+{% endblock %}

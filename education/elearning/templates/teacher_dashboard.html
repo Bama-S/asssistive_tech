@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="EducatTutotrial"
+  agent-id="22fb3c20-0c13-40a4-ad8d-e5a7efb2386e"
+  language-code="en">
+</df-messenger>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Teacher Dashboard</h1>
+        <p class="lead">Select the action that you wish to perform</p>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Educat</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        
+        <li class="nav-item active">
+
+                <!--<input type="submit" value="LOGOUT" name="LOGOUT" style="border: none; outline: none"/>-->
+                <a  href="/logout" class="nav-link"value="LOGOUT" name="LOGOUT">Logout</a>
+            
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="body">
+<form style="text-align:center;" method="post" action="/teacher_dashboard">
+    
+    <div class="row">
+        <div class="col">
+            <input class="btn-login" style="margin: 20px" type="submit" value="CREATE LESSON" name="CREATE LESSON"/>
+            <input class="btn-login" style="margin: 20px" type="submit" value="DELETE LESSON" name="DELETE LESSON" />
+            <input class="btn-login" style="margin: 20px" type="submit" value="ADD PAGE" name="ADD PAGE" />
+            <input class="btn-login" style="margin: 20px" type="submit" value="ADD PAGE MANUALLY" name="ADD PAGE MANUALLY" />
+
+        </div>
+        <div class="col">
+            <input class="btn-login" style="margin: 20px"  type="submit" value="DELETE PAGE" name="DELETE PAGE" />
+            <input class="btn-login" style="margin: 20px" type="submit" value="VIEW EXERCISES" name="VIEW EXERCISES" />
+            <input class="btn-login" style="margin: 20px" type="submit" value="PREVIEW LESSON" name="PREVIEW LESSON" />
+        </div>
+    </div>
+
+</form>
+</div>
+
+<p style="text-align:center;">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <p class=flashes>
+                    <div>{{ message }}</div>
+            </p>
+        {% endif %}
+    {% endwith %}
+</p>
+
+{% endblock %}

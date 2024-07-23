@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="EducatTutotrial"
+  agent-id="22fb3c20-0c13-40a4-ad8d-e5a7efb2386e"
+  language-code="en">
+</df-messenger>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Delete A Page</h1>
+        <p class="lead"><b>Warning! </b>This action can't be undone.</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Educat</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <a  href="/teacher_dashboard" class="nav-link">Teacher Dashboard</a>
+        </li>
+        <li class="nav-iterm active">
+            <a  href="/logout" class="nav-link"value="LOGOUT" name="LOGOUT">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="body">
+<form style="text-align:center;" method="post" action="{{ url_for('get_pagenames_deletion_page') }}">
+    <!-- <label for="pagetitle">Page Title</label>
+    <input type="text" class="form-control" name="pagetitle" placeholder="Page title">
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle text-right " type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Page Title
+        </button>
+        <div class="dropdown-menu pre-scrollable" aria-labelledby="dropdownMenu3">
+            {% for lessonName in lessonNames %}
+                <button name="lessonname" value={{lessonName}}  class="btn btn-success dropdown-item text-right">{{lessonName}}</button>
+                <div class="dropdown-divider"></div>
+            {% endfor %}
+            
+        </div>
+    </div> -->
+
+    <label>Available lessons</label>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle text-right " type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Lesson Name
+        </button>
+        <div class="dropdown-menu pre-scrollable" aria-labelledby="dropdownMenu3">
+            {% for lessonName in lessonNames %}
+                <button name="lessonname" value={{lessonName}}  class="btn btn-success dropdown-item text-right">{{lessonName}}</button>
+                <!--<input name="lessonname" value={{lessonName}}  class="btn btn-success dropdown-item text-right">-->
+                <div class="dropdown-divider"></div>
+            {% endfor %}
+            <!--{% for i in range(110) %}
+                <button name = "age" value = {{i}} class="dropdown-item text-right " type="submit">{{i}}</button>
+            {% endfor %}-->
+        </div>
+    </div>
+    <!--<button type="submit">SUBMIT</button>-->
+</form>
+</div>
+{% endblock %}
+
+<script type="text/javascript">
+    function selOpt() {
+       selEl = document.querySelector('#s1');
+       lname = selEl.value;
+       console.log(lname);
+       document.querySelector('#selles').textContent = lname;
+    }
+ </script>
