@@ -24,10 +24,7 @@ from lmqg import TransformersQG
 from bing_image_downloader import downloader
 from nltk.translate.bleu_score import sentence_bleu
 
-
-# openai.api_key = "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"
-openai.api_key = "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"
-
+setx OPENAI_API_KEY “<yourkey>”
 
 history = []
 

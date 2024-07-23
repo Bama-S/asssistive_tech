@@ -24,7 +24,7 @@ from flashtext import KeywordProcessor
 from transformers import T5ForConditionalGeneration,T5Tokenizer
 from lmqg import TransformersQG
 
-openai.api_key = "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"
+setx OPENAI_API_KEY “<yourkey>”
 
 history = []
 
