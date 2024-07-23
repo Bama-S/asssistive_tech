@@ -1,8 +1,7 @@
 import openai
 
-# openai.api_key = "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"
-# openai.api_key = "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"
-openai.api_key = "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"
+setx OPENAI_API_KEY “<yourkey>”
+
 
 history = []
 
