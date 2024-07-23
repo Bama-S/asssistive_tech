@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="EducatTutotrial"
+  agent-id="22fb3c20-0c13-40a4-ad8d-e5a7efb2386e"
+  language-code="en">
+</df-messenger>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Create A Page</h1>
+        <p class="lead"><b>Educat</b> enables you to add pages under the lessons that you have created.</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Educat</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <a  href="/teacher_dashboard" class="nav-link">Teacher Dashboard</a>
+        </li>
+        <li class="nav-iterm active">
+            <a  href="/logout" class="nav-link"value="LOGOUT" name="LOGOUT">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="body">
+<form style="text-align:center;" method="post" action="{{ url_for('create_page') }}">
+    <label for="pagetitle">Page Title</label>
+    <input type="text" class="form-control" name="pagetitle" placeholder="Page title">
+    <label>Available lessons</label>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle text-right " type="button" id="dropdownMenu3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Lesson Name
+        </button>
+        <div class="dropdown-menu pre-scrollable" aria-labelledby="dropdownMenu3">
+            {% for lessonName in lessonNames %}
+                <button name="lessonname" value={{lessonName}}  class="btn btn-success dropdown-item text-right">{{lessonName}}</button>
+                <!--<input name="lessonname" value={{lessonName}}  class="btn btn-success dropdown-item text-right">-->
+                <div class="dropdown-divider"></div>
+            {% endfor %}
+            <!--{% for i in range(110) %}
+                <button name = "age" value = {{i}} class="dropdown-item text-right " type="submit">{{i}}</button>
+            {% endfor %}-->
+        </div>
+    </div>
+    <label for="pagecontent">Page Content</label>
+    <div class="form-outline mb-4">
+        <!-- <textarea name="pagecontent" value={{page_content}}></textarea> -->
+        <textarea rows="6" disabled>{{page_content}}</textarea>
+        <!-- <textarea rows="5" class="form-control" name="pagetitle" value="hiii"></textarea> -->
+    </div>
+    <!--<button type="submit">SUBMIT</button>-->
+</form>
+<!-- <p>{{questionsObject}}</p> -->
+
+
+<form style="text-align:center; margin:50px" method="post" action="{{ url_for('add_questions') }}">
+<div class="card-container">
+    <div class="card">
+        <div class="card-body">
+            <p>Question</p>
+            <input name="lesson_id" type="hidden" value="{{lesson_id}}">
+            <input name="page_id" type="hidden" value="{{page_id}}">
+            <input name="question_id" type="hidden" value="{{question_id}}">
+            <div style="margin: 5px;">
+                <input class="form-control" style="width:380px" name="question" type="text" value="{{question}}">
+            </div>
+            <div>
+                <div class="col">
+                    <p>a. </p><input class="form-control" style="margin: 5px;" name="option1" type="text" value="{{option4}}">
+                    <p>b. </p><input class="form-control" style="margin: 5px;" name="option2" type="text" value="{{option1}}">
+                </div>
+                <div class="col">
+                    <p>c. </p><input class="form-control" style="margin: 5px;" name="option3" type="text" value="{{option2}}">
+                    <p>d. </p><input class="form-control" style="margin: 5px;" name="option4" type="text" value="{{option3}}">
+                </div>
+            </div>
+            <div>
+                <p>answer: </p><input class="form-control" style="margin: 5px;" name="answer" type="text" value="{{answer}}">
+            </div>
+            <div>
+                <button type="submit" name="button" value="yes" class="btn"><i class="fa fa-check"></i></input>
+                <button type="submit" name="button" value="no" class="btn"><i class="fa fa-close"></i></input>
+            </div>
+          
+          
+        </div>
+      </div>
+    </div>
+
+</div>
+</form>
+{% endblock %}
+
+<script type="text/javascript">
+    function selOpt() {
+       selEl = document.querySelector('#s1');
+       lname = selEl.value;
+       console.log(lname);
+       document.querySelector('#selles').textContent = lname;
+    }
+ </script>

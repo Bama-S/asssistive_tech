@@ -1,0 +1,9 @@
+flask_pymongo
+bcrypt
+wikipedia
+nltk
+spacy
+openai
+flashtext
+transformers
+lmqg
