@@ -13,7 +13,7 @@ These are categorized into:
   * E-Learning - Teachers can create content and questions using GPT, which students can access it through a switch
   * Mathematics - Three software applications are included, that consists of Arithmetic operations, Co-ordinate Geometry/ Trignometry and Matrices.
 - Communication: Task sequencing software is included. Picture talk in local language is available in https://play.google.com/store/apps/details?id=com.yuvaraj.aac_srp&hl=en_IN 
-- Games: Puzzles and e-flash card can be found
+- Games: Puzzles, E-billing and e-flash card can be found
 
 
 Check https://sabarirb.org/assistive_tech/index.html for downloading and installing the executable versions.
